@@ -4,10 +4,10 @@ import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "foodItem")
+@Document(collection = "fooditems")
 @Data
 public class FoodItems {
     @Id
     private String id;
-    private String name;
+    private String Food;
 }

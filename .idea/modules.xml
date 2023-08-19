@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/Appneuronllp.iml" filepath="$PROJECT_DIR$/.idea/Appneuronllp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mongodbatlas/mongodbatlas.iml" filepath="$PROJECT_DIR$/mongodbatlas/mongodbatlas.iml" />
+    </modules>
+  </component>
+</project>

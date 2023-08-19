@@ -23,15 +23,15 @@ public class SearchFoodImpl implements SearchFoodRepository {
     @Override
     public List<FoodItems> findByText(String text) {
         List<FoodItems> foodItems = new ArrayList<>();
-        MongoDatabase database = mongoClient.getDatabase("fooditems");
-        MongoCollection<Document> collection = database.getCollection("foodItem");
+        MongoDatabase database = mongoClient.getDatabase("foodItem");
+        MongoCollection<Document> collection = database.getCollection("fooditems");
         AggregateIterable<Document> result = collection.aggregate(List.of(new Document("$search",
                 new Document("index", "default")
                         .append("autocomplete", new Document("query", text)
-                                .append("path", "name")
+                                .append("path", "Food")
                                 .append("tokenOrder", "any")
                                 .append("fuzzy", new Document("maxEdits", 1L)
-                                        .append("prefixLength", 2L))))));
+                                        .append("prefixLength", 4L))))));
         result.forEach(doc-> foodItems.add(mongoConverter.read(FoodItems.class,doc)));
         return foodItems;
     }
